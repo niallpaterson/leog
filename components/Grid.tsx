@@ -43,18 +43,69 @@ const createSubGridIndexCols = (
 	return cols;
 };
 
+type AlignmentKeyword =
+	| 'normal'
+	| 'stretch'
+	| 'flex-start'
+	| 'start'
+	| 'end'
+	| 'flex-end'
+	| 'center'
+	| 'baseline'
+	| 'first baseline'
+	| 'last baseline'
+	| 'space-evenly'
+	| 'space-between'
+	| 'space-around'
+	| 'initial'
+	| 'revert'
+	| 'revert-layer'
+	| 'unset';
+
+type Alignment =
+	| AlignmentKeyword
+	| `safe ${AlignmentKeyword}`
+	| `unsafe ${AlignmentKeyword}`;
+
+type JustifyContent =
+	| 'flex-start'
+	| 'center'
+	| 'flex-end'
+	| 'space-between'
+	| 'space-evenly'
+	| 'space-around';
+
 export type GridItemProps = {
 	start: GridColumnIndex;
 	end: GridColumnIndex;
+	alignItems?: Alignment;
+	alignContent?: Alignment;
+	justifyContent?: JustifyContent;
+	justifyItems?: JustifyItems;
+	rowGap?: string | boolean;
 	subGrid?: boolean;
+	className?: string;
+	padding?: string;
+	paddingTop?: string;
+	paddingBottom?: string;
+	paddingLeft?: string;
+	paddingRight?: string;
 };
-
 const GridItem = styled.div<GridItemProps>`
 	grid-column: ${({ start, end }) => `col-${start} / col-${end}`};
 	display: ${({ subGrid }) => (subGrid ? 'grid' : 'block')};
 	grid-column-gap: 0.5rem;
 	grid-template-columns: ${({ start, end }) =>
 		createSubGridIndexCols(start, end)};
+	justify-content: ${({ justifyContent }) => justifyContent};
+	align-content: ${({ alignContent }) => alignContent};
+	justify-items: ${({ justifyItems }) => justifyItems};
+	align-items: ${({ alignItems }) => alignItems};
+	padding: ${({ padding }) => padding || 'initial'};
+	padding-bottom: ${({ paddingBottom }) => paddingBottom || 'initial'};
+	padding-top: ${({ paddingTop }) => paddingTop || 'initial'};
+	padding-left: ${({ paddingLeft }) => paddingLeft || 'initial'};
+	padding-right: ${({ paddingRight }) => paddingRight || 'initial'};
 `;
 
 export const Grid = {

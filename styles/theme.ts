@@ -23,6 +23,12 @@ export const theme = {
 			xxl: '2rem',
 		},
 	},
+	spacing: {
+		xs: '28px',
+		sm: '64px',
+		md: '96px',
+		lg: '256px',
+	},
 	breakPoint: {
 		xxs: '320px',
 		xs: '375px',
