@@ -81,7 +81,7 @@ export type GridItemProps = {
 	alignItems?: Alignment;
 	alignContent?: Alignment;
 	justifyContent?: JustifyContent;
-	justifyItems?: JustifyItems;
+	justifyItems?: JustifyContent;
 	rowGap?: string | boolean;
 	subGrid?: boolean;
 	className?: string;
@@ -97,10 +97,10 @@ const GridItem = styled.div<GridItemProps>`
 	grid-column-gap: 0.5rem;
 	grid-template-columns: ${({ start, end }) =>
 		createSubGridIndexCols(start, end)};
-	justify-content: ${({ justifyContent }) => justifyContent};
-	align-content: ${({ alignContent }) => alignContent};
-	justify-items: ${({ justifyItems }) => justifyItems};
-	align-items: ${({ alignItems }) => alignItems};
+	justify-content: ${({ justifyContent }) => justifyContent ?? 'initial'};
+	align-content: ${({ alignContent }) => alignContent ?? 'initial'};
+	justify-items: ${({ justifyItems }) => justifyItems ?? 'initial'};
+	align-items: ${({ alignItems }) => alignItems ?? 'initial'};
 	padding: ${({ padding }) => padding || 'initial'};
 	padding-bottom: ${({ paddingBottom }) => paddingBottom || 'initial'};
 	padding-top: ${({ paddingTop }) => paddingTop || 'initial'};
