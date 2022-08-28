@@ -24,11 +24,11 @@ const Home: NextPage = () => {
 				<Sections.About />
 				<SectionSeparator>{'01. ACTOR'}</SectionSeparator>
 				<Sections.Actor />
-				<SectionSeparator>{'02. DIRECTOR OF ACTORS'}</SectionSeparator>
+				<SectionSeparator>{'02. DIRECTOR'}</SectionSeparator>
 				<Sections.Director />
-				<SectionSeparator>{'03. EDUCATOR OF OTHERS'}</SectionSeparator>
-				<SectionSeparator>{'04. GALLERY'}</SectionSeparator>
-				<SectionSeparator>{'05. CONTACT'}</SectionSeparator>
+				<SectionSeparator>{'03. FACILITATOR'}</SectionSeparator>
+				<Sections.Facilitator />
+				<SectionSeparator>{'04. CONTACT'}</SectionSeparator>
 				<Sections.Contact />
 			</Screen>
 			<Sections.Footer />
