@@ -3,4 +3,5 @@ export * from './About';
 export * from './Actor';
 export * from './Contact';
 export * from './Director';
+export * from './Faciltator';
 export * from './Footer';
