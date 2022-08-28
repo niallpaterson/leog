@@ -54,7 +54,7 @@ export const Actor: React.FC = () => {
 					start={2}
 					end={6}
 					className={css`
-						border: 1px solid white;
+						border: 2px solid ${theme.colors.white};
 						position: relative;
 					`}
 				>
