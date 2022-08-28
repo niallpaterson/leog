@@ -25,6 +25,10 @@ export const Paragraph = styled.p`
 	text-transform: uppercase;
 `;
 
+export const Body = styled(Paragraph)`
+	text-transform: none;
+`;
+
 export const Display = styled.p`
 	text-align: end;
 	letter-spacing: 1px;
